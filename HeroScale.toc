@@ -1,0 +1,42 @@
+## Interface: 120001
+## Title: Hero Scale
+## SavedVariablesPerCharacter: HeroScaleCharDB
+## IconTexture: Interface\AddOns\HeroScale\assets\logo-18x18.png
+
+## OptionalDeps: Baganator, Bagnon
+
+## Category: Equipment
+## Category-deDE: Ausrüstung
+## Category-esES: Equipo
+## Category-esMX: Equipo
+## Category-frFR: Équipement
+## Category-itIT: Equipaggiamento
+## Category-koKR: 장비
+## Category-ptBR: Equipamento
+## Category-ruRU: Экипировка
+## Category-zhCN: 装备
+## Category-zhTW: 裝備
+
+Init.lua
+API.lua
+DR.lua
+ScoringEngine.lua
+TrinketEvaluator.lua
+classes\DeathKnight.lua
+classes\DemonHunter.lua
+classes\Druid.lua
+classes\Evoker.lua
+classes\Hunter.lua
+classes\Mage.lua
+classes\Monk.lua
+classes\Paladin.lua
+classes\Priest.lua
+classes\Rogue.lua
+classes\Shaman.lua
+classes\Warlock.lua
+classes\Warrior.lua
+Core.lua
+UI\Colors.lua
+UI\Tooltip.lua
+UI\Overlay.lua
+UI\Options.lua
