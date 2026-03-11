@@ -1,0 +1,8 @@
+package-as: HeroScale
+
+ignore:
+  - .git
+  - .gitignore
+  - .pkgmeta
+  - CLAUDE.md
+  - README.md

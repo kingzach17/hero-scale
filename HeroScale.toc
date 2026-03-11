@@ -1,5 +1,6 @@
 ## Interface: 120001
 ## Title: Hero Scale
+## Version: @project-version@
 ## SavedVariablesPerCharacter: HeroScaleCharDB
 ## IconTexture: Interface\AddOns\HeroScale\assets\logo-18x18.png
 
