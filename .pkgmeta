@@ -1,8 +1,14 @@
 package-as: HeroScale
 
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: plain
+
 ignore:
   - .git
   - .gitignore
   - .pkgmeta
   - CLAUDE.md
   - README.md
+  - CHANGES.txt
+  - CHANGELOG.md

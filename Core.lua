@@ -156,7 +156,7 @@ function Addon:EvaluateForSpec(itemLink, specID)
         if isActive then
             if reason == "WEAPON" then
                 return {{ prefix = specName, type = "CANNOT_EQUIP_WEAPON" }}
-            else
+            elseif reason == "ARMOR" then
                 return {{ prefix = specName, type = "WRONG_ARMOR" }}
             end
         end
