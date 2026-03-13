@@ -24,6 +24,18 @@ local SNAPSHOT_STAT_MAP = {
     ["ITEM_MOD_VERSATILITY"]          = "VERS",
 }
 
+local POSITIVE_TYPES = {
+    UPGRADE = true, BIG_UPGRADE = true, SET_ILVL_UP = true,
+    SET_NEED_PIECES = true, SET_TRACK_UP = true, CATALYST_TRACK = true,
+    HIGHER_TRACK = true, TIER_UPGRADE = true, EMPTY_SLOT = true,
+}
+
+local NEGATIVE_TYPES = {
+    DOWNGRADE = true, SET_ILVL_DOWN = true, SET_PROTECTED = true,
+    SIDEGRADE = true, SET_SIDEGRADE = true, TIER_DOWNGRADE = true,
+    TIER_SIDEGRADE = true,
+}
+
 -- Resolves spec data to a flat weight table.
 -- Looks up the saved content type for the spec, defaulting to "Leveling".
 function Addon:ResolveWeights(specData, specID)
@@ -204,11 +216,6 @@ function Addon:EvaluateForSpec(itemLink, specID)
             end
         end
 
-        local POSITIVE_TYPES = {
-            UPGRADE = true, BIG_UPGRADE = true, SET_ILVL_UP = true,
-            SET_NEED_PIECES = true, SET_TRACK_UP = true, CATALYST_TRACK = true,
-            HIGHER_TRACK = true, TIER_UPGRADE = true, EMPTY_SLOT = true,
-        }
         if #slotEntries == 2 then
             local p1 = POSITIVE_TYPES[slotEntries[1].type]
             local p2 = POSITIVE_TYPES[slotEntries[2].type]
@@ -318,8 +325,7 @@ EvaluateSlotEntry = function(prefix, newScore, currentScore, setResult, trackNam
     end
 
     -- NORMAL: standard score comparison with set bonus modifier and track penalty applied
-    local basePct = ((newScore - currentScore) / currentScore) * 100
-    local pct = basePct + setBonusModifier - trackPenalty
+    local pct = ((newScore - currentScore) / currentScore) * 100 + setBonusModifier - trackPenalty
     local closeCall = math_abs(pct) < 2
 
     if pct > 100 then
@@ -356,11 +362,6 @@ function Addon:EvaluateItemForTooltip(itemLink)
     end
 
     -- Off-specs (downgrades filtered out)
-    local NEGATIVE_TYPES = {
-        DOWNGRADE = true, SET_ILVL_DOWN = true, SET_PROTECTED = true,
-        SIDEGRADE = true, SET_SIDEGRADE = true, TIER_DOWNGRADE = true,
-        TIER_SIDEGRADE = true,
-    }
     local offSpecEntries = {}
     for specID in pairs(classSpecs) do
         if specID ~= activeSpecID then

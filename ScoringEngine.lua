@@ -192,6 +192,21 @@ local function IsTwoHandEquip(itemLink)
     return Addon.ScoringEngine:IsTwoHandEquip(itemLink)
 end
 
+-- Filters a SLOT_MAP mapping for 1H weapons: returns main-hand only when the
+-- spec uses off-hand items or when a 2H weapon is currently equipped.
+local function FilterWeaponMapping(mapping, snapshot, specData)
+    if #mapping <= 1 then return mapping end
+    local sd = specData or Addon.ActiveSpecData
+    if sd and sd.canUseOffhand then
+        return { mapping[1] }
+    end
+    local mhLink = snapshot and snapshot[16] or API:GetInventoryItemLink("player", 16)
+    if mhLink and IsTwoHandEquip(mhLink) then
+        return { mapping[1] }
+    end
+    return mapping
+end
+
 -- Infer weapon DPS role multiplier from spec weights.
 -- Melee DPS: 1.15x (weapon DPS is critical), Caster: 0.85x (stats dominate), Tank/other: 1.0x
 -- When called without args, uses active spec data.
@@ -332,21 +347,17 @@ function Addon.ScoringEngine:EstimateMaxScore(currentScore, trackInfo)
     return currentScore * (trackInfo.maxIlvl / trackInfo.currentIlvl)
 end
 
--- Returns percentage penalty for lower-track items (0, 2, or 5)
-function Addon.ScoringEngine:GetTrackPenalty(candidateLink, equippedLink)
+-- Returns a tier-gap category: 0 (same or higher), 1 (one tier lower), 2 (two+ tiers lower).
+-- Compares track tiers directly when available, falling back to ilvl difference.
+local function GetTrackGap(self, candidateLink, equippedLink)
     local candidateTrack = self:GetTrackInfo(candidateLink)
     local equippedTrack = self:GetTrackInfo(equippedLink)
 
-    -- If we have both tracks, use direct tier comparison
     if candidateTrack and equippedTrack then
         local tierDiff = equippedTrack.tier - candidateTrack.tier
-        if tierDiff <= 0 then return 0 end  -- Same or higher track, no penalty
-
-        if tierDiff >= 2 then
-            return 5  -- 5% penalty for 2+ tracks lower (dead end)
-        else
-            return 2  -- 2% penalty for 1 track lower (limited potential)
-        end
+        if tierDiff >= 2 then return 2 end
+        if tierDiff == 1 then return 1 end
+        return 0
     end
 
     -- Fallback: use ilvl difference if track detection fails for either item
@@ -356,47 +367,24 @@ function Addon.ScoringEngine:GetTrackPenalty(candidateLink, equippedLink)
 
     if candidateIlvl > 0 and equippedIlvl > 0 then
         local ilvlDiff = equippedIlvl - candidateIlvl
-        if ilvlDiff >= 26 then
-            return 5  -- 2+ tiers worth of ilvl difference
-        elseif ilvlDiff >= 13 then
-            return 2  -- 1 tier worth of ilvl difference
-        end
+        if ilvlDiff >= 26 then return 2 end
+        if ilvlDiff >= 13 then return 1 end
     end
 
     return 0
 end
 
+local TRACK_GAP_PENALTY  = { [0] = 0, [1] = 2, [2] = 5 }
+local TRACK_GAP_WARNING  = { [1] = "LIMITED", [2] = "DEAD_END" }
+
+-- Returns percentage penalty for lower-track items (0, 2, or 5)
+function Addon.ScoringEngine:GetTrackPenalty(candidateLink, equippedLink)
+    return TRACK_GAP_PENALTY[GetTrackGap(self, candidateLink, equippedLink)]
+end
+
 -- Returns warning type for lower-track items: "LIMITED", "DEAD_END", or nil
 function Addon.ScoringEngine:GetTrackWarning(candidateLink, equippedLink)
-    local candidateTrack = self:GetTrackInfo(candidateLink)
-    local equippedTrack = self:GetTrackInfo(equippedLink)
-
-    -- If we have both tracks, use direct tier comparison
-    if candidateTrack and equippedTrack then
-        local tierDiff = equippedTrack.tier - candidateTrack.tier
-        if tierDiff >= 2 then
-            return "DEAD_END"
-        elseif tierDiff == 1 then
-            return "LIMITED"
-        end
-        return nil
-    end
-
-    -- Fallback: use ilvl difference if track detection fails for either item
-    -- Each track tier is roughly 13 ilvl apart
-    local candidateIlvl = self:GetEffectiveItemLevel(candidateLink)
-    local equippedIlvl = self:GetEffectiveItemLevel(equippedLink)
-
-    if candidateIlvl > 0 and equippedIlvl > 0 then
-        local ilvlDiff = equippedIlvl - candidateIlvl
-        if ilvlDiff >= 26 then
-            return "DEAD_END"  -- 2+ tiers worth of ilvl difference
-        elseif ilvlDiff >= 13 then
-            return "LIMITED"   -- 1 tier worth of ilvl difference
-        end
-    end
-
-    return nil
+    return TRACK_GAP_WARNING[GetTrackGap(self, candidateLink, equippedLink)]
 end
 
 -- ============================================================
@@ -841,20 +829,9 @@ function Addon.ScoringEngine:GetEquippedScoresForSlots(itemLink, snapshot, specD
     local mapping = SLOT_MAP[equipSlot]
     if not mapping then return {}, false end
 
-    local slots = mapping  -- reuse static SLOT_MAP entry; only copy when filtering
-
-    -- Handle non-dual-wield: skip off-hand for 1H candidates
-    if equipSlot == "INVTYPE_WEAPON" and #mapping > 1 then
-        local sd = specData or Addon.ActiveSpecData
-        if sd and sd.canUseOffhand then
-            slots = { mapping[1] }
-        else
-            local mhLink = snapshot and snapshot[16] or API:GetInventoryItemLink("player", 16)
-            if mhLink and IsTwoHandEquip(mhLink) then
-                slots = { mapping[1] }
-            end
-        end
-    end
+    local slots = equipSlot == "INVTYPE_WEAPON"
+        and FilterWeaponMapping(mapping, snapshot, specData)
+        or mapping
 
     local candidateID = API:GetItemIDForItemInfo(itemLink)
     local candidateStripped = StripEnchantAndGems(itemLink)
@@ -918,86 +895,12 @@ function Addon.ScoringEngine:GetCurrentEquippedScore(itemLink)
     return math_max(score1, score2)
 end
 
-function Addon.ScoringEngine:GetWeakestEquippedLink(itemLink, snapshot, specData, weights, combatRatings)
-    local equipSlot = GetEquipSlotInfo(itemLink)
-    if not equipSlot or equipSlot == "" then return nil end
-
-    local mapping = SLOT_MAP[equipSlot]
-    if not mapping then return nil end
-
-    if equipSlot == "INVTYPE_WEAPON" and #mapping > 1 then
-        local sd = specData or Addon.ActiveSpecData
-        if sd and sd.canUseOffhand then
-            mapping = { mapping[1] }
-        else
-            local mhLink = snapshot and snapshot[16] or API:GetInventoryItemLink("player", 16)
-            if mhLink and IsTwoHandEquip(mhLink) then
-                mapping = { mapping[1] }
-            end
-        end
-    end
-
-    local weakestLink, weakestScore = nil, math_huge
-    for _, slotInfo in ipairs(mapping) do
-        local slotID = slotInfo[2]
-        local link = snapshot and snapshot[slotID] or API:GetInventoryItemLink("player", slotID)
-        if link then
-            local stripped = StripEnchantAndGems(link)
-            local score = stripped and self:GetMultiplicativeScore(stripped, specData, weights, combatRatings) or 0
-            if score < weakestScore then
-                weakestScore = score
-                weakestLink = link
-            end
-        elseif not weakestLink then
-            weakestScore = 0
-            weakestLink = nil
-        end
-    end
-
-    return weakestLink
-end
-
 function Addon.ScoringEngine:GetWeakestEquippedSlotID(itemLink, snapshot, specData, weights, combatRatings)
-    local equipSlot = GetEquipSlotInfo(itemLink)
-    if not equipSlot or equipSlot == "" then return nil end
-
-    local mapping = SLOT_MAP[equipSlot]
-    if not mapping then return nil end
-
-    if equipSlot == "INVTYPE_WEAPON" and #mapping > 1 then
-        local sd = specData or Addon.ActiveSpecData
-        if sd and sd.canUseOffhand then
-            mapping = { mapping[1] }
-        else
-            local mhLink = snapshot and snapshot[16] or API:GetInventoryItemLink("player", 16)
-            if mhLink and IsTwoHandEquip(mhLink) then
-                mapping = { mapping[1] }
-            end
-        end
-    end
-
-    local weakestSlotID, weakestScore = nil, math_huge
-    for _, slotInfo in ipairs(mapping) do
-        local slotID = slotInfo[2]
-        local link = snapshot and snapshot[slotID] or API:GetInventoryItemLink("player", slotID)
-        if link then
-            local stripped = StripEnchantAndGems(link)
-            local score = stripped and self:GetMultiplicativeScore(stripped, specData, weights, combatRatings) or 0
-            if score < weakestScore then
-                weakestScore = score
-                weakestSlotID = slotID
-            end
-        elseif not weakestSlotID then
-            weakestScore = 0
-            weakestSlotID = slotID
-        end
-    end
-
-    return weakestSlotID
+    local _, slotID = self:GetWeakestEquipped(itemLink, snapshot, specData, weights, combatRatings)
+    return slotID
 end
 
--- Combined function: returns both weakest link and slot ID in a single pass.
--- Avoids the duplicate strip+score work of calling the two functions separately.
+-- Returns both the weakest equipped link and slot ID in a single pass.
 function Addon.ScoringEngine:GetWeakestEquipped(itemLink, snapshot, specData, weights, combatRatings)
     local equipSlot = GetEquipSlotInfo(itemLink)
     if not equipSlot or equipSlot == "" then return nil, nil end
@@ -1005,16 +908,8 @@ function Addon.ScoringEngine:GetWeakestEquipped(itemLink, snapshot, specData, we
     local mapping = SLOT_MAP[equipSlot]
     if not mapping then return nil, nil end
 
-    if equipSlot == "INVTYPE_WEAPON" and #mapping > 1 then
-        local sd = specData or Addon.ActiveSpecData
-        if sd and sd.canUseOffhand then
-            mapping = { mapping[1] }
-        else
-            local mhLink = snapshot and snapshot[16] or API:GetInventoryItemLink("player", 16)
-            if mhLink and IsTwoHandEquip(mhLink) then
-                mapping = { mapping[1] }
-            end
-        end
+    if equipSlot == "INVTYPE_WEAPON" then
+        mapping = FilterWeaponMapping(mapping, snapshot, specData)
     end
 
     local weakestLink, weakestSlotID, weakestScore = nil, nil, math_huge

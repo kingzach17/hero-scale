@@ -3,9 +3,7 @@ local API = Addon.API
 Addon.TrinketEvaluator = {}
 
 local ipairs = ipairs
-local next = next
 local math_abs = math.abs
-local string_format = string.format
 local table_insert = table.insert
 
 -- Tier hierarchy: lower number = better tier
@@ -134,12 +132,6 @@ function Addon.TrinketEvaluator:CompareTrinkets(newItemID, equippedItemID, specD
     }
 end
 
--- Check if stat-based fallback scoring should be used
-function Addon.TrinketEvaluator:ShouldUseFallbackScoring(newItemID, equippedItemID, specData, contentType)
-    local result = self:CompareTrinkets(newItemID, equippedItemID, specData, contentType)
-    return result.useFallback
-end
-
 -- ============================================================
 -- Evaluation for Tooltip Display
 -- ============================================================
@@ -161,7 +153,7 @@ function Addon.TrinketEvaluator:EvaluateTrinketComparison(itemLink, equippedScor
     -- Evaluate against each equipped trinket slot
     local results = {}
     for _, slotInfo in ipairs(equippedScores) do
-        local equippedLink = slotInfo.slotID and API:GetInventoryItemLink("player", slotInfo.slotID)
+        local equippedLink = slotInfo.equippedLink
         local equippedItemID = equippedLink and API:GetItemIDForItemInfo(equippedLink)
 
         local comparison = self:CompareTrinkets(newItemID, equippedItemID, specData, contentType)
@@ -201,37 +193,7 @@ function Addon.TrinketEvaluator:EvaluateTrinketComparison(itemLink, equippedScor
     return {
         perSlot = results,
         best = bestResult,
-        hasNewTier = self:GetTrinketTier(newItemID, specData, contentType) ~= nil,
+        hasNewTier = results[1] and results[1].comparison.newTier ~= nil or false,
     }
 end
 
--- ============================================================
--- Utility Functions
--- ============================================================
-
--- Get display text for a tier comparison result
-function Addon.TrinketEvaluator:GetComparisonText(comparison)
-    if not comparison then return nil end
-
-    local T = self
-    local comp = comparison.comparison
-
-    if comp == T.TIER_UPGRADE then
-        return string_format("%s-Tier (from %s)", comparison.newTier, comparison.equippedTier)
-    elseif comp == T.TIER_DOWNGRADE then
-        return string_format("%s-Tier (from %s)", comparison.newTier, comparison.equippedTier)
-    elseif comp == T.TIER_SIDEGRADE then
-        return string_format("%s-Tier Sidegrade", comparison.newTier)
-    elseif comp == T.NOT_IN_LIST then
-        return "Not in Tier List"
-    end
-
-    return nil -- FALLBACK uses stat comparison
-end
-
--- Check if an item is a trinket
-function Addon.TrinketEvaluator:IsTrinket(itemLink)
-    if not itemLink then return false end
-    local _, _, _, equipSlot = API:GetItemInfoInstant(itemLink)
-    return equipSlot == "INVTYPE_TRINKET"
-end

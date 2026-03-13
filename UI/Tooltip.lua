@@ -5,6 +5,9 @@ local ipairs = ipairs
 local math_abs = math.abs
 local string_format = string.format
 
+-- Cached player class hex (never changes during gameplay)
+local cachedClassHex
+
 -- Returns a suffix describing the set bonus modifier baked into the percentage
 local function GetSetBonusSuffix(entry)
     if not entry.setTransition then return "" end
@@ -129,9 +132,11 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tool
     local result = Addon:EvaluateItemForTooltip(itemLink)
     if not result then return end
 
-    local _, classTag = API:UnitClass("player")
-    local classColor = RAID_CLASS_COLORS[classTag]
-    local classHex = classColor and classColor.colorStr and classColor.colorStr:sub(3) or "ffffff"
+    if not cachedClassHex then
+        local _, classTag = API:UnitClass("player")
+        local classColor = RAID_CLASS_COLORS[classTag]
+        cachedClassHex = classColor and classColor.colorStr and classColor.colorStr:sub(3) or "ffffff"
+    end
 
     local CC = Addon.Colors
 
@@ -139,10 +144,10 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tool
     tooltip:AddLine("|cffffd100Hero Scale|r")
 
     for _, entry in ipairs(result.activeEntries) do
-        tooltip:AddLine(Addon:FormatTooltipEntry(entry, classHex, CC, false))
+        tooltip:AddLine(Addon:FormatTooltipEntry(entry, cachedClassHex, CC, false))
     end
 
     for _, entry in ipairs(result.offSpecEntries) do
-        tooltip:AddLine(Addon:FormatTooltipEntry(entry, classHex, CC, true))
+        tooltip:AddLine(Addon:FormatTooltipEntry(entry, cachedClassHex, CC, true))
     end
 end)

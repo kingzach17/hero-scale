@@ -82,28 +82,24 @@ local s3Line2 = CreateLine(panel, "GameFontHighlight", s3Line1, 0, -4)
 local function RefreshLegend()
     autoEquipCheck:SetChecked(Addon:GetAutoEquip())
     local CC = Addon.Colors
+
+    -- Off-spec texture not pre-computed in Colors.lua; build it here
     local TEX_FMT = "|T" .. Addon.CHEVRON_PATH .. ":0:0:0:0:64:64:0:64:0:64:%d:%d:%d|t"
-
-    -- Build inline chevron textures from current palette
-    local function ChevronTex(r01, g01, b01)
-        return string_format(TEX_FMT, math.floor(r01 * 255), math.floor(g01 * 255), math.floor(b01 * 255))
-    end
-
-    local texGreen = ChevronTex(CC.CHEVRON_GREEN_R, CC.CHEVRON_GREEN_G, CC.CHEVRON_GREEN_B)
-    local texBlue  = ChevronTex(CC.CHEVRON_BLUE_R, CC.CHEVRON_BLUE_G, CC.CHEVRON_BLUE_B)
-    local texYellow = ChevronTex(CC.CHEVRON_YELLOW_R, CC.CHEVRON_YELLOW_G, CC.CHEVRON_YELLOW_B)
-    local texOffSpec = ChevronTex(CC.CHEVRON_OFFSPEC_R, CC.CHEVRON_OFFSPEC_G, CC.CHEVRON_OFFSPEC_B)
+    local texOffSpec = string_format(TEX_FMT,
+        math.floor(CC.CHEVRON_OFFSPEC_R * 255),
+        math.floor(CC.CHEVRON_OFFSPEC_G * 255),
+        math.floor(CC.CHEVRON_OFFSPEC_B * 255))
 
     -- Section 1: Overlay Icons
     s1Header:SetText("Bag & Loot Overlays")
 
-    s1Line1:SetText(texGreen .. "  |cff" .. CC.GREEN .. "Score Upgrade|r")
+    s1Line1:SetText(CC.TEX_GREEN .. "  |cff" .. CC.GREEN .. "Score Upgrade|r")
     s1Desc1:SetText("|cff999999Better stats than your currently equipped gear|r")
 
-    s1Line2:SetText(texBlue .. "  |cff" .. CC.BLUE .. "Set Piece|r")
+    s1Line2:SetText(CC.TEX_BLUE .. "  |cff" .. CC.BLUE .. "Set Piece|r")
     s1Desc2:SetText("|cff999999Tier set piece needed for set bonus|r")
 
-    s1Line3:SetText(texYellow .. "  |cff" .. CC.YELLOW .. "Track Potential|r")
+    s1Line3:SetText(CC.TEX_YELLOW .. "  |cff" .. CC.YELLOW .. "Track Potential|r")
     s1Desc3:SetText("|cff999999Can upgrade to a higher tier than your equipped item|r")
 
     s1Line4:SetText(texOffSpec .. "  |cff" .. CC.OFFSPEC .. "Off-Spec Upgrade|r")
@@ -428,22 +424,23 @@ local function RefreshStatDetails()
     local roleName = ROLE_DISPLAY[specData.role] or specData.role or "Unknown"
     local armorName = ARMOR_DISPLAY[specData.armorType] or "Unknown"
     specInfoLine1:SetText(string_format(
-        "Primary: |cff00ff00%s|r  |  Role: |cff00ff00%s|r  |  Armor: |cff00ff00%s|r",
-        primaryName, roleName, armorName))
+        "Primary: |cff%s%s|r  |  Role: |cff%s%s|r  |  Armor: |cff%s%s|r",
+        CC.GREEN, primaryName, CC.GREEN, roleName, CC.GREEN, armorName))
 
     local setPieces = Addon.ScoringEngine and Addon.ScoringEngine.CountEquippedSetPieces
         and Addon.ScoringEngine:CountEquippedSetPieces() or 0
     local wdps = weights.WEAPON_DPS or 0
     specInfoLine2:SetText(string_format(
-        "Set Pieces: |cff00ff00%d/4|r  |  Weapon DPS Weight: |cff00ff00%.1f|r",
-        setPieces, wdps))
+        "Set Pieces: |cff%s%d/4|r  |  Weapon DPS Weight: |cff%s%.1f|r",
+        CC.GREEN, setPieces, CC.GREEN, wdps))
 end
 
 -- Refresh the panel state when shown
 RefreshWeightsPanel = function()
     -- Update detected spec/hero talent
     local specName = Addon.ActiveSpecName or "Unknown"
-    detectedLabel:SetText("Detected Spec: |cff00ff00" .. specName .. "|r")
+    local CC = Addon.Colors
+    detectedLabel:SetText("Detected Spec: |cff" .. CC.GREEN .. specName .. "|r")
 
     -- Refresh stepper to reflect current selection
     UpdateStepper()
