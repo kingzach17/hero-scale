@@ -29,8 +29,8 @@ Addon.ClassData["HUNTER"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 5.00, CRIT = 1.05, MASTERY = 0.80, HASTE = 0.70, VERS = 0.32, STAMINA = 2.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 1.50, HASTE = 1.05, CRIT = 0.98, MASTERY = 0.54, VERS = 0.35, STAMINA = 0.00, LEECH = 0.10, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 1.50, CRIT = 1.05, MASTERY = 0.80, HASTE = 0.70, VERS = 0.32, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
-            ["Raid"]         = { PRIMARY = 1.50, HASTE = 1.05, CRIT = 0.97, VERS = 0.47, MASTERY = 0.42, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 1.50, CRIT = 1.05, MASTERY = 0.96, HASTE = 0.84, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
+            ["Raid"]         = { PRIMARY = 1.50, HASTE = 0.89, CRIT = 1.05, VERS = 0.65, MASTERY = 1.03, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
         },
         trinkets = {
             ["Leveling"] = {
@@ -88,8 +88,8 @@ Addon.ClassData["HUNTER"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 5.00, MASTERY = 1.05, CRIT = 0.97, HASTE = 0.69, VERS = 0.24, STAMINA = 2.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 1.50, CRIT = 1.05, MASTERY = 0.60, HASTE = 0.59, VERS = 0.25, STAMINA = 0.00, LEECH = 0.10, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 1.50, MASTERY = 1.05, CRIT = 0.97, HASTE = 0.69, VERS = 0.24, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
-            ["Raid"]         = { PRIMARY = 1.50, CRIT = 1.05, MASTERY = 0.53, HASTE = 0.49, VERS = 0.23, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 1.50, MASTERY = 0.82, CRIT = 1.05, HASTE = 0.76, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
+            ["Raid"]         = { PRIMARY = 1.50, CRIT = 1.05, MASTERY = 0.83, HASTE = 0.76, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
         },
         trinkets = {
             ["Leveling"] = {
@@ -147,8 +147,8 @@ Addon.ClassData["HUNTER"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 5.00, MASTERY = 1.05, CRIT = 0.60, HASTE = 0.58, VERS = 0.17, STAMINA = 2.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 1.50, MASTERY = 1.05, CRIT = 0.98, HASTE = 0.79, VERS = 0.27, STAMINA = 0.00, LEECH = 0.10, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 1.50, MASTERY = 1.05, CRIT = 0.60, HASTE = 0.58, VERS = 0.17, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
-            ["Raid"]         = { PRIMARY = 1.50, MASTERY = 1.05, CRIT = 0.99, HASTE = 0.71, VERS = 0.24, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 1.50, MASTERY = 1.05, CRIT = 0.96, HASTE = 0.87, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
+            ["Raid"]         = { PRIMARY = 1.50, MASTERY = 1.05, CRIT = 0.94, HASTE = 0.85, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.5, SOCKET_VALUE = 65 },
         },
         trinkets = {
             ["Leveling"] = {
