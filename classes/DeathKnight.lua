@@ -46,18 +46,18 @@ Addon.ClassData["DEATHKNIGHT"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242396, 219309 },                     -- Unyielding Netherprism, Tome of Light's Devotion
-                ["A"] = { 242394, 242401, 190958, 219314, 246344 }, -- Eradicating Arcanocore, Brand of Ceaseless Ire, So'leah's Secret Technique, Ara-Kara Sacbrood, Cursed Stone Idol
-                ["B"] = { 242395, 242403, 242399, 219311, 232541, 190652, 242495, 246945, 238390 }, -- Astral Antenna, Perfidious Projector, Screams of a Forgotten Sky, Void Pactstone, Improvised Seaforium Pacemaker, Ticking Sack of Terror, Incorporeal Warpclaw, Incorporeal Essence-Gorger, Soulbreaker's Sigil
-                ["C"] = { 242402, 238386 },                     -- Araz's Ritual Forge, Void-Touched Fragment
-                ["D"] = { 246944 },                             -- Mind-Fracturing Odium
+                ["S"] = { 252420, 249343 },                                 -- Solarflare Prism, Gaze of the Alnseer
+                ["A"] = { 249344, 249342, 250256, 264507 },                 -- Light Company Guidon, Heart of Ancient Hunger, Heart of Wind, Crucible of Erratic Energies
+                ["B"] = { 249339, 252418, 193701, 251792, 250258, 252421 }, -- Gloom-Spattered Dreadscale, Solar Core Igniter, Algeth'ar Puzzle Box, Glorious Crusader's Keepsake, Vessel of Tortured Souls, Rotting Globule
+                ["C"] = {},
+                ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242396, 242401 },                     -- Unyielding Netherprism, Brand of Ceaseless Ire
-                ["A"] = { 242394, 219309, 242391, 190958, 219314 }, -- Eradicating Arcanocore, Tome of Light's Devotion, Soulbinder's Embrace, So'leah's Secret Technique, Ara-Kara Sacbrood
-                ["B"] = { 242395, 242403, 242399, 232541, 190652 }, -- Astral Antenna, Perfidious Projector, Screams of a Forgotten Sky, Improvised Seaforium Pacemaker, Ticking Sack of Terror
-                ["C"] = { 242402, 238386 },                     -- Araz's Ritual Forge, Void-Touched Fragment
-                ["D"] = { 246944 },                             -- Mind-Fracturing Odium
+                ["S"] = { 249343, 249344, 249342 },                 -- Gaze of the Alnseer, Light Company Guidon, Heart of Ancient Hunger
+                ["A"] = { 252420, 250256 },                         -- Solarflare Prism, Heart of Wind
+                ["B"] = { 264507, 249339, 193701, 260235 },         -- Crucible of Erratic Energies, Gloom-Spattered Dreadscale, Algeth'ar Puzzle Box, Umbral Plume
+                ["C"] = { 251792, 249805, 250227 },                 -- Glorious Crusader's Keepsake, Undreamt God's Oozing Vestige, Kroluk's Warbanner
+                ["D"] = {},
             },
         }
     },
@@ -103,18 +103,18 @@ Addon.ClassData["DEATHKNIGHT"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242395, 246344, 242402, 242396 },     -- Astral Antenna, Cursed Stone Idol, Araz's Ritual Forge, Unyielding Netherprism
-                ["A"] = { 232541, 242399, 242394, 219308, 219314, 190958 }, -- Improvised Seaforium Pacemaker, Screams of a Forgotten Sky, Eradicating Arcanocore, Signet of the Priory, Ara-Kara Sacbrood, So'leah's Secret Technique
-                ["B"] = { 219311, 190652, 242495 },              -- Void Pactstone, Ticking Sack of Terror, Incorporeal Warpclaw
-                ["C"] = { 242403, 238386, 238390, 246945 },      -- Perfidious Projector, Void-Touched Fragment, Soulbreaker's Sigil, Incorporeal Essence-Gorger
-                ["D"] = { 246944 },                             -- Mind-Fracturing Odium
+                ["S"] = { 249343, 249344, 193701 },                         -- Gaze of the Alnseer, Light Company Guidon, Algeth'ar Puzzle Box
+                ["A"] = { 249342, 252420, 264507 },                         -- Heart of Ancient Hunger, Solarflare Prism, Crucible of Erratic Energies
+                ["B"] = { 250256, 251792, 250258, 249806, 248583, 265657 }, -- Heart of Wind, Glorious Crusader's Keepsake, Vessel of Tortured Souls, Radiant Plume, Drum of Renewed Bonds, Fiber of Living Agony
+                ["C"] = {},
+                ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242395, 242402, 242396 },              -- Astral Antenna, Araz's Ritual Forge, Unyielding Netherprism
-                ["A"] = { 246344, 232541, 242399, 242394, 219308, 219314, 190958 }, -- Cursed Stone Idol, Improvised Seaforium Pacemaker, Screams of a Forgotten Sky, Eradicating Arcanocore, Signet of the Priory, Ara-Kara Sacbrood, So'leah's Secret Technique
-                ["B"] = { 219311, 190652, 242495 },              -- Void Pactstone, Ticking Sack of Terror, Incorporeal Warpclaw
-                ["C"] = { 242403, 238386, 238390, 246945 },      -- Perfidious Projector, Void-Touched Fragment, Soulbreaker's Sigil, Incorporeal Essence-Gorger
-                ["D"] = { 246944 },                             -- Mind-Fracturing Odium
+                ["S"] = { 249344, 249343 },                         -- Light Company Guidon, Gaze of the Alnseer
+                ["A"] = { 249342, 193701, 252420 },                 -- Heart of Ancient Hunger, Algeth'ar Puzzle Box, Solarflare Prism
+                ["B"] = { 249806, 264507, 250256 },                 -- Radiant Plume, Crucible of Erratic Energies, Heart of Wind
+                ["C"] = { 251792, 248583, 265657, 260235 },         -- Glorious Crusader's Keepsake, Drum of Renewed Bonds, Fiber of Living Agony, Umbral Plume
+                ["D"] = {},
             },
         }
     },
@@ -160,17 +160,17 @@ Addon.ClassData["DEATHKNIGHT"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 246344 },                             -- Cursed Stone Idol
-                ["A"] = { 242402, 242395, 219308, 232541, 219314 }, -- Araz's Ritual Forge, Astral Antenna, Signet of the Priory, Improvised Seaforium Pacemaker, Ara-Kara Sacbrood
-                ["B"] = { 242399, 242396, 219312, 242495 },      -- Screams of a Forgotten Sky, Unyielding Netherprism, Empowering Crystal of Anub'ikkaj, Incorporeal Warpclaw
-                ["C"] = { 190958, 238386 },                      -- So'leah's Secret Technique, Void-Touched Fragment
+                ["S"] = { 249344, 249343 },                                 -- Light Company Guidon, Gaze of the Alnseer
+                ["A"] = { 252420, 249342, 193701 },                         -- Solarflare Prism, Heart of Ancient Hunger, Algeth'ar Puzzle Box
+                ["B"] = { 264507, 250256, 250258, 251792, 248583, 249806 }, -- Crucible of Erratic Energies, Heart of Wind, Vessel of Tortured Souls, Glorious Crusader's Keepsake, Drum of Renewed Bonds, Radiant Plume
+                ["C"] = { 265657 },                                         -- Fiber of Living Agony
                 ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 246344, 242402 },                     -- Cursed Stone Idol, Araz's Ritual Forge
-                ["A"] = { 242395, 219308, 232541, 242396 },     -- Astral Antenna, Signet of the Priory, Improvised Seaforium Pacemaker, Unyielding Netherprism
-                ["B"] = { 242399, 219314, 219312 },              -- Screams of a Forgotten Sky, Ara-Kara Sacbrood, Empowering Crystal of Anub'ikkaj
-                ["C"] = { 190958, 238386 },                      -- So'leah's Secret Technique, Void-Touched Fragment
+                ["S"] = { 249344, 249343 },                         -- Light Company Guidon, Gaze of the Alnseer
+                ["A"] = { 249342, 252420, 193701 },                 -- Heart of Ancient Hunger, Solarflare Prism, Algeth'ar Puzzle Box
+                ["B"] = { 264507, 249806, 250256 },                 -- Crucible of Erratic Energies, Radiant Plume, Heart of Wind
+                ["C"] = { 248583, 251792, 250258, 265657 },         -- Drum of Renewed Bonds, Glorious Crusader's Keepsake, Vessel of Tortured Souls, Fiber of Living Agony
                 ["D"] = {},
             },
         }

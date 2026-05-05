@@ -44,17 +44,17 @@ Addon.ClassData["WARLOCK"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242497 }, -- Azhiccaran Parapodia (AoE scaling)
-                ["A"] = { 242395, 242402 }, -- Astral Antenna, Araz's Ritual Forge
-                ["B"] = { 242392 }, -- Diamantine Voidcore
-                ["C"] = { 219308 }, -- Signet of the Priory
+                ["S"] = { 250144 },                                          -- Emberwing Feather
+                ["A"] = { 250256, 249343, 264507, 250223 },                  -- Heart of Wind, Gaze of the Alnseer, Crucible of Erratic Energies, Soulcatcher's Charm
+                ["B"] = { 249346, 250258, 249809, 249810, 251792 },          -- Vaelgor's Final Stare, Vessel of Tortured Souls, Locus-Walker's Ribbon, Shadow of the Empyrean Requiem, Glorious Crusader's Keepsake
+                ["C"] = {},
                 ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242395 }, -- Astral Antenna (ST BiS Passive)
-                ["A"] = { 242402, 242497 }, -- Araz's Ritual Forge, Azhiccaran Parapodia
-                ["B"] = { 242392 }, -- Diamantine Voidcore
-                ["C"] = { 219308 }, -- Signet of the Priory
+                ["S"] = { 250144 },                                          -- Emberwing Feather
+                ["A"] = { 249343, 250256, 250223, 264507 },                  -- Gaze of the Alnseer, Heart of Wind, Soulcatcher's Charm, Crucible of Erratic Energies
+                ["B"] = { 249346, 249810, 249809 },                          -- Vaelgor's Final Stare, Shadow of the Empyrean Requiem, Locus-Walker's Ribbon
+                ["C"] = { 251792, 250258, 248583, 249340 },                  -- Glorious Crusader's Keepsake, Vessel of Tortured Souls, Drum of Renewed Bonds, Wraps of Cosmic Madness
                 ["D"] = {},
             },
         }
@@ -99,17 +99,17 @@ Addon.ClassData["WARLOCK"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242497 }, -- Azhiccaran Parapodia (AoE scaling)
-                ["A"] = { 242395, 242402 }, -- Astral Antenna, Araz's Ritual Forge
-                ["B"] = { 242392 }, -- Diamantine Voidcore
-                ["C"] = { 219308 }, -- Signet of the Priory
+                ["S"] = { 250144 },                                          -- Emberwing Feather
+                ["A"] = { 250256, 249343, 264507 },                          -- Heart of Wind, Gaze of the Alnseer, Crucible of Erratic Energies
+                ["B"] = { 249809, 249346, 250223 },                          -- Locus-Walker's Ribbon, Vaelgor's Final Stare, Soulcatcher's Charm
+                ["C"] = { 251792, 248583, 250258 },                          -- Glorious Crusader's Keepsake, Drum of Renewed Bonds, Vessel of Tortured Souls
                 ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242395 }, -- Astral Antenna (ST BiS Passive)
-                ["A"] = { 242497, 242402 }, -- Azhiccaran Parapodia, Araz's Ritual Forge
-                ["B"] = { 242392 }, -- Diamantine Voidcore
-                ["C"] = { 219308 }, -- Signet of the Priory
+                ["S"] = { 250144 },                                          -- Emberwing Feather
+                ["A"] = { 249343, 250256, 264507, 249809 },                  -- Gaze of the Alnseer, Heart of Wind, Crucible of Erratic Energies, Locus-Walker's Ribbon
+                ["B"] = { 249346 },                                          -- Vaelgor's Final Stare
+                ["C"] = { 250223, 248583, 251792, 249810 },                  -- Soulcatcher's Charm, Drum of Renewed Bonds, Glorious Crusader's Keepsake, Shadow of the Empyrean Requiem
                 ["D"] = {},
             },
         }
@@ -154,17 +154,17 @@ Addon.ClassData["WARLOCK"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242497 }, -- Azhiccaran Parapodia (AoE scaling)
-                ["A"] = { 242395 }, -- Astral Antenna
-                ["B"] = { 242392, 242400 }, -- Diamantine Voidcore, Nexus-King's Command
-                ["C"] = { 219308 }, -- Signet of the Priory
+                ["S"] = { 249343 },                                          -- Gaze of the Alnseer
+                ["A"] = { 250144, 250256, 249346, 264507, 250223 },          -- Emberwing Feather, Heart of Wind, Vaelgor's Final Stare, Crucible of Erratic Energies, Soulcatcher's Charm
+                ["B"] = { 249809, 250258, 249810, 251792 },                  -- Locus-Walker's Ribbon, Vessel of Tortured Souls, Shadow of the Empyrean Requiem, Glorious Crusader's Keepsake
+                ["C"] = {},
                 ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242497, 242395 }, -- Azhiccaran Parapodia, Astral Antenna (dual passive BiS)
-                ["A"] = { 242400 }, -- Nexus-King's Command (burst encounters)
-                ["B"] = { 242392 }, -- Diamantine Voidcore
-                ["C"] = { 219308 }, -- Signet of the Priory
+                ["S"] = { 249343 },                                          -- Gaze of the Alnseer
+                ["A"] = { 249346, 250144, 250256, 249809, 264507 },          -- Vaelgor's Final Stare, Emberwing Feather, Heart of Wind, Locus-Walker's Ribbon, Crucible of Erratic Energies
+                ["B"] = { 250223, 249810 },                                  -- Soulcatcher's Charm, Shadow of the Empyrean Requiem
+                ["C"] = { 251792, 248583 },                                  -- Glorious Crusader's Keepsake, Drum of Renewed Bonds
                 ["D"] = {},
             },
         }

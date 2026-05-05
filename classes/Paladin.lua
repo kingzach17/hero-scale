@@ -47,18 +47,18 @@ Addon.ClassData["PALADIN"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242393, 242395 },                                     -- Loom'ithar's Living Silk, Astral Antenna
-                ["A"] = { 190958, 242392, 219312, 242400 },                     -- So'leah's Secret Technique, Diamantine Voidcore, Empowering Crystal of Anub'ikkaj, Nexus-King's Command
-                ["B"] = { 219314, 219308, 242497, 185845 },                     -- Ara-Kara Sacbrood, Signet of the Priory, Azhiccaran Parapodia, First Class Healing Distributor
-                ["C"] = { 242494, 242402 },                                     -- Lily of the Eternal Weave, Araz's Ritual Forge
-                ["D"] = { 219317, 238386, 242867 },                             -- Harvester's Edict, Void-Touched Fragment, Automatic Footbomb Dispenser
+                ["S"] = { 250256, 249343 },                                  -- Heart of Wind, Gaze of the Alnseer
+                ["A"] = { 264507, 193718, 249808, 250144 },                  -- Crucible of Erratic Energies, Emerald Coach's Whistle, Litany of Lightblind Wrath, Emberwing Feather
+                ["B"] = { 249809, 249346, 250253, 251792, 249341 },          -- Locus-Walker's Ribbon, Vaelgor's Final Stare, Whisper of the Duskwraith, Glorious Crusader's Keepsake, Volatile Void Suffuser
+                ["C"] = { 250258 },                                          -- Vessel of Tortured Souls
+                ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242392, 242400, 242393 },                             -- Diamantine Voidcore, Nexus-King's Command, Loom'ithar's Living Silk
-                ["A"] = { 242395, 190958, 219312 },                             -- Astral Antenna, So'leah's Secret Technique, Empowering Crystal of Anub'ikkaj
-                ["B"] = { 219314, 219308, 242497, 242494, 242402 },             -- Ara-Kara Sacbrood, Signet of the Priory, Azhiccaran Parapodia, Lily of the Eternal Weave, Araz's Ritual Forge
-                ["C"] = { 185845, 246940 },                                     -- First Class Healing Distributor, Manaforged Aethercell
-                ["D"] = { 219317, 238386, 242867 },                             -- Harvester's Edict, Void-Touched Fragment, Automatic Footbomb Dispenser
+                ["S"] = { 249343, 250256 },                                  -- Gaze of the Alnseer, Heart of Wind
+                ["A"] = { 264507, 249809, 249808, 249346, 193718 },          -- Crucible of Erratic Energies, Locus-Walker's Ribbon, Litany of Lightblind Wrath, Vaelgor's Final Stare, Emerald Coach's Whistle
+                ["B"] = { 250144, 249341, 249811 },                          -- Emberwing Feather, Volatile Void Suffuser, Light of the Cosmic Crescendo
+                ["C"] = { 251792, 250253 },                                  -- Glorious Crusader's Keepsake, Whisper of the Duskwraith
+                ["D"] = {},
             },
         }
     },
@@ -101,18 +101,18 @@ Addon.ClassData["PALADIN"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242401, 232541 },                                     -- Brand of Ceaseless Ire, Improvised Seaforium Pacemaker
-                ["A"] = { 242395, 219309, 219314, 232543 },                     -- Astral Antenna, Tome of Light's Devotion, Ara-Kara Sacbrood, Ringing Ritual Mud
-                ["B"] = { 242404, 190958, 219308, 246344 },                     -- All-Devouring Nucleus, So'leah's Secret Technique, Signet of the Priory, Cursed Stone Idol
-                ["C"] = { 242402, 242391, 219311 },                             -- Araz's Ritual Forge, Soulbinder's Embrace, Void Pactstone
-                ["D"] = { 242867, 238386, 246944 },                             -- Automatic Footbomb Dispenser, Void-Touched Fragment, Mind-Fracturing Odium
+                ["S"] = { 250256 },                                          -- Heart of Wind
+                ["A"] = { 252420, 249342, 249343, 193701 },                  -- Solarflare Prism, Heart of Ancient Hunger, Gaze of the Alnseer, Algeth'ar Puzzle Box
+                ["B"] = { 264507, 252418, 249339, 252421, 250242 },          -- Crucible of Erratic Energies, Solar Core Igniter, Gloom-Spattered Dreadscale, Rotting Globule, Jelly Replicator
+                ["C"] = { 251792, 260235 },                                  -- Glorious Crusader's Keepsake, Umbral Plume
+                ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242401, 232541, 219309, 232543, 190652 },             -- Brand of Ceaseless Ire, Improvised Seaforium Pacemaker, Tome of Light's Devotion, Ringing Ritual Mud, Ticking Sack of Terror
-                ["A"] = { 242402, 242395, 242403, 219308, 219314, 242399, 242396 }, -- Araz's Ritual Forge, Astral Antenna, Perfidious Projector, Signet of the Priory, Ara-Kara Sacbrood, Screams of a Forgotten Sky, Unyielding Netherprism
-                ["B"] = { 242404, 219316, 242495, 246344, 185846 },             -- All-Devouring Nucleus, Ceaseless Swarmgland, Incorporeal Warpclaw, Cursed Stone Idol, Miniscule Mailemental in an Envelope
-                ["C"] = { 185836, 190958, 238386, 242867, 246944, 238390, 240213 }, -- Codex of the First Technique, So'leah's Secret Technique, Void-Touched Fragment, Automatic Footbomb Dispenser, Mind-Fracturing Odium, Soulbreaker's Sigil, Veiling Mana Shroud
-                ["D"] = { 246825 },                                             -- Chaotic Nethergate
+                ["S"] = { 249342, 249343 },                                  -- Heart of Ancient Hunger, Gaze of the Alnseer
+                ["A"] = { 250256, 193701, 252420 },                          -- Heart of Wind, Algeth'ar Puzzle Box, Solarflare Prism
+                ["B"] = { 249339, 249344, 260235, 264507 },                  -- Gloom-Spattered Dreadscale, Light Company Guidon, Umbral Plume, Crucible of Erratic Energies
+                ["C"] = { 249807, 252418, 249805 },                          -- The Eternal Egg, Solar Core Igniter, Undreamt God's Oozing Vestige
+                ["D"] = {},
             },
         }
     },
@@ -155,18 +155,18 @@ Addon.ClassData["PALADIN"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242395, 232541 },                                     -- Astral Antenna, Improvised Seaforium Pacemaker
-                ["A"] = { 242402, 219308, 219314, 246344 },                     -- Araz's Ritual Forge, Signet of the Priory, Ara-Kara Sacbrood, Cursed Stone Idol
-                ["B"] = { 242399, 242394, 190958, 219311 },                     -- Screams of a Forgotten Sky, Eradicating Arcanocore, So'leah's Secret Technique, Void Pactstone
-                ["C"] = { 242495, 242396 },                                     -- Incorporeal Warpclaw, Unyielding Netherprism
-                ["D"] = { 242403, 238386, 242867 },                             -- Perfidious Projector, Void-Touched Fragment, Automatic Footbomb Dispenser
+                ["S"] = { 193701 },                                          -- Algeth'ar Puzzle Box
+                ["A"] = { 252420, 249343, 249342, 264507 },                  -- Solarflare Prism, Gaze of the Alnseer, Heart of Ancient Hunger, Crucible of Erratic Energies
+                ["B"] = { 250256, 249806, 260235 },                          -- Heart of Wind, Radiant Plume, Umbral Plume
+                ["C"] = { 251792, 250258 },                                  -- Glorious Crusader's Keepsake, Vessel of Tortured Souls
+                ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242402, 242395 },                                     -- Araz's Ritual Forge, Astral Antenna
-                ["A"] = { 232541, 242399, 219308, 242394 },                     -- Improvised Seaforium Pacemaker, Screams of a Forgotten Sky, Signet of the Priory, Eradicating Arcanocore
-                ["B"] = { 219314, 246344, 190958, 242396 },                     -- Ara-Kara Sacbrood, Cursed Stone Idol, So'leah's Secret Technique, Unyielding Netherprism
-                ["C"] = { 190652, 242403, 242495 },                             -- Ticking Sack of Terror, Perfidious Projector, Incorporeal Warpclaw
-                ["D"] = { 238386, 242867, 238390 },                             -- Void-Touched Fragment, Automatic Footbomb Dispenser, Soulbreaker's Sigil
+                ["S"] = { 193701, 249342 },                                  -- Algeth'ar Puzzle Box, Heart of Ancient Hunger
+                ["A"] = { 249343, 252420 },                                  -- Gaze of the Alnseer, Solarflare Prism
+                ["B"] = { 249806, 264507, 260235, 250256 },                  -- Radiant Plume, Crucible of Erratic Energies, Umbral Plume, Heart of Wind
+                ["C"] = { 251792, 248583 },                                  -- Glorious Crusader's Keepsake, Drum of Renewed Bonds
+                ["D"] = {},
             },
         }
     },

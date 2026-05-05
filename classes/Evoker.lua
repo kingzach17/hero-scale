@@ -49,18 +49,18 @@ Addon.ClassData["EVOKER"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242402, 242395, 242392 },              -- Araz's Ritual Forge, Astral Antenna, Diamantine Voidcore
-                ["A"] = { 242497, 219308, 242494, 190958, 242399, 219314, 242398, 232545, 219312 }, -- Azhiccaran Parapodia, Signet of the Priory, Lily of the Eternal Weave, So'leah's Secret Technique, Screams of a Forgotten Sky, Ara-Kara Sacbrood, Naazindhri's Mystic Lash, Gigazap's Zap-Cap, Empowering Crystal of Anub'ikkaj
-                ["B"] = { 246945, 185846, 219317, 238390 },      -- Incorporeal Essence-Gorger, Miniscule Mailemental in an Envelope, Harvester's Edict, Soulbreaker's Sigil
-                ["C"] = { 238386, 219313 },                      -- Void-Touched Fragment, Mereldar's Toll
-                ["D"] = { 242403 },                              -- Perfidious Projector
+                ["S"] = { 250256, 249346 },                                  -- Heart of Wind, Vaelgor's Final Stare
+                ["A"] = { 264507, 249343, 250144, 250223, 249809 },          -- Crucible of Erratic Energies, Gaze of the Alnseer, Emberwing Feather, Soulcatcher's Charm, Locus-Walker's Ribbon
+                ["B"] = { 248583, 249810, 251792 },                          -- Drum of Renewed Bonds, Shadow of the Empyrean Requiem, Glorious Crusader's Keepsake
+                ["C"] = {},
+                ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242402, 242395, 242392 },              -- Araz's Ritual Forge, Astral Antenna, Diamantine Voidcore
-                ["A"] = { 242497, 219308, 242494, 190958, 242399, 219314, 242398, 232545, 219312 }, -- Azhiccaran Parapodia, Signet of the Priory, Lily of the Eternal Weave, So'leah's Secret Technique, Screams of a Forgotten Sky, Ara-Kara Sacbrood, Naazindhri's Mystic Lash, Gigazap's Zap-Cap, Empowering Crystal of Anub'ikkaj
-                ["B"] = { 246945, 185846, 219317, 238390 },      -- Incorporeal Essence-Gorger, Miniscule Mailemental in an Envelope, Harvester's Edict, Soulbreaker's Sigil
-                ["C"] = { 238386, 219313 },                      -- Void-Touched Fragment, Mereldar's Toll
-                ["D"] = { 242403 },                              -- Perfidious Projector
+                ["S"] = { 249346, 249343 },                                  -- Vaelgor's Final Stare, Gaze of the Alnseer
+                ["A"] = { 264507, 250223, 250256, 250144, 249809 },          -- Crucible of Erratic Energies, Soulcatcher's Charm, Heart of Wind, Emberwing Feather, Locus-Walker's Ribbon
+                ["B"] = { 249810, 251792 },                                  -- Shadow of the Empyrean Requiem, Glorious Crusader's Keepsake
+                ["C"] = { 248583, 250258, 250257 },                          -- Drum of Renewed Bonds, Vessel of Tortured Souls, Eye of the Drowning Void
+                ["D"] = {},
             },
         }
     },
@@ -99,18 +99,18 @@ Addon.ClassData["EVOKER"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242494, 242399, 242402, 242395, 242497, 242392 }, -- Lily of the Eternal Weave, Screams of a Forgotten Sky, Araz's Ritual Forge, Astral Antenna, Azhiccaran Parapodia, Diamantine Voidcore
-                ["A"] = { 242398, 219313, 219308, 246945, 219312, 190958, 219314 }, -- Naazindhri's Mystic Lash, Mereldar's Toll, Signet of the Priory, Incorporeal Essence-Gorger, Empowering Crystal of Anub'ikkaj, So'leah's Secret Technique, Ara-Kara Sacbrood
-                ["B"] = { 232545, 219317, 238386 },               -- Gigazap's Zap-Cap, Harvester's Edict, Void-Touched Fragment
-                ["C"] = { 238390, 185846 },                       -- Soulbreaker's Sigil, Miniscule Mailemental in an Envelope
-                ["D"] = { 242403 },                              -- Perfidious Projector
+                ["S"] = { 250256, 264507 },                                  -- Heart of Wind, Crucible of Erratic Energies
+                ["A"] = { 250223, 249343, 250144 },                          -- Soulcatcher's Charm, Gaze of the Alnseer, Emberwing Feather
+                ["B"] = { 249346, 249810, 248583, 249809 },                  -- Vaelgor's Final Stare, Shadow of the Empyrean Requiem, Drum of Renewed Bonds, Locus-Walker's Ribbon
+                ["C"] = { 50259 },                                           -- Nevermelting Ice Crystal
+                ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242494, 242399, 242402, 242395, 242497, 242392 }, -- Lily of the Eternal Weave, Screams of a Forgotten Sky, Araz's Ritual Forge, Astral Antenna, Azhiccaran Parapodia, Diamantine Voidcore
-                ["A"] = { 242398, 219313, 219308, 246945, 219312, 190958, 219314 }, -- Naazindhri's Mystic Lash, Mereldar's Toll, Signet of the Priory, Incorporeal Essence-Gorger, Empowering Crystal of Anub'ikkaj, So'leah's Secret Technique, Ara-Kara Sacbrood
-                ["B"] = { 232545, 219317, 238386 },               -- Gigazap's Zap-Cap, Harvester's Edict, Void-Touched Fragment
-                ["C"] = { 238390, 185846 },                       -- Soulbreaker's Sigil, Miniscule Mailemental in an Envelope
-                ["D"] = { 242403 },                              -- Perfidious Projector
+                ["S"] = { 250256, 250223 },                                  -- Heart of Wind, Soulcatcher's Charm
+                ["A"] = { 264507, 249346, 249343, 249810, 250144 },          -- Crucible of Erratic Energies, Vaelgor's Final Stare, Gaze of the Alnseer, Shadow of the Empyrean Requiem, Emberwing Feather
+                ["B"] = { 249809, 248583 },                                  -- Locus-Walker's Ribbon, Drum of Renewed Bonds
+                ["C"] = { 251792 },                                          -- Glorious Crusader's Keepsake
+                ["D"] = {},
             },
         }
     },
@@ -149,17 +149,17 @@ Addon.ClassData["EVOKER"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242393, 242400 },                      -- Loom'ithar's Living Silk, Nexus-King's Command
-                ["A"] = { 242395, 242392, 219312, 190958, 242494 }, -- Astral Antenna, Diamantine Voidcore, Empowering Crystal of Anub'ikkaj, So'leah's Secret Technique, Lily of the Eternal Weave
-                ["B"] = {},
-                ["C"] = { 238386, 246940 },                      -- Void-Touched Fragment, Manaforged Aethercell
+                ["S"] = { 250256, 249343 },                                              -- Heart of Wind, Gaze of the Alnseer
+                ["A"] = { 264507, 193718, 249809, 250144, 249808, 249346 },              -- Crucible of Erratic Energies, Emerald Coach's Whistle, Locus-Walker's Ribbon, Emberwing Feather, Litany of Lightblind Wrath, Vaelgor's Final Stare
+                ["B"] = { 251792, 249341, 250223, 250258 },                              -- Glorious Crusader's Keepsake, Volatile Void Suffuser, Soulcatcher's Charm, Vessel of Tortured Souls
+                ["C"] = {},
                 ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242400 },                              -- Nexus-King's Command
-                ["A"] = { 242395, 242392, 242393, 219312, 190958 }, -- Astral Antenna, Diamantine Voidcore, Loom'ithar's Living Silk, Empowering Crystal of Anub'ikkaj, So'leah's Secret Technique
-                ["B"] = { 242494 },                              -- Lily of the Eternal Weave
-                ["C"] = { 238386 },                              -- Void-Touched Fragment
+                ["S"] = { 249343, 264507 },                                              -- Gaze of the Alnseer, Crucible of Erratic Energies
+                ["A"] = { 249809, 250256, 249346, 193718, 249808 },                      -- Locus-Walker's Ribbon, Heart of Wind, Vaelgor's Final Stare, Emerald Coach's Whistle, Litany of Lightblind Wrath
+                ["B"] = { 249341, 250144, 251792 },                                      -- Volatile Void Suffuser, Emberwing Feather, Glorious Crusader's Keepsake
+                ["C"] = {},
                 ["D"] = {},
             },
         }

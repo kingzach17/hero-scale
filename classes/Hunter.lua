@@ -48,17 +48,17 @@ Addon.ClassData["HUNTER"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 232541, 242395 },                    -- Improvised Seaforium Pacemaker, Astral Antenna
-                ["A"] = { 219314, 219308, 219312 },             -- Ara-Kara Sacbrood, Signet of the Priory, Empowering Crystal of Anub'ikkaj
-                ["B"] = { 242402, 190958 },                     -- Araz's Ritual Forge, So'leah's Secret Technique
-                ["C"] = { 219317 },                             -- Harvester's Edict
+                ["S"] = { 193701, 252420 },                       -- Algeth'ar Puzzle Box, Solarflare Prism
+                ["A"] = { 249343, 264507, 249806 },               -- Gaze of the Alnseer, Crucible of Erratic Energies, Radiant Plume
+                ["B"] = { 250144, 250256, 251792, 250258, 248583 }, -- Emberwing Feather, Heart of Wind, Glorious Crusader's Keepsake, Vessel of Tortured Souls, Drum of Renewed Bonds
+                ["C"] = {},
                 ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 232541, 242395 },                    -- Improvised Seaforium Pacemaker, Astral Antenna
-                ["A"] = { 219314, 242402, 219308, 219312 },    -- Ara-Kara Sacbrood, Araz's Ritual Forge, Signet of the Priory, Empowering Crystal of Anub'ikkaj
-                ["B"] = { 190958, 219317 },                    -- So'leah's Secret Technique, Harvester's Edict
-                ["C"] = {},
+                ["S"] = { 193701, 249343 },                       -- Algeth'ar Puzzle Box, Gaze of the Alnseer
+                ["A"] = { 252420, 249806, 264507 },               -- Solarflare Prism, Radiant Plume, Crucible of Erratic Energies
+                ["B"] = { 250144, 250256, 251792 },               -- Emberwing Feather, Heart of Wind, Glorious Crusader's Keepsake
+                ["C"] = { 249344, 248583, 249345, 250258 },       -- Light Company Guidon, Drum of Renewed Bonds, Ranger-Captain's Iridescent Insignia, Vessel of Tortured Souls
                 ["D"] = {},
             },
         }
@@ -107,17 +107,17 @@ Addon.ClassData["HUNTER"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 242395, 242396 },                    -- Astral Antenna, Unyielding Netherprism
-                ["A"] = { 219308, 242494, 219312, 232541 },    -- Signet of the Priory, Lily of the Eternal Weave, Empowering Crystal of Anub'ikkaj, Improvised Seaforium Pacemaker
-                ["B"] = { 242402, 242397, 242399 },             -- Araz's Ritual Forge, Sigil of the Cosmic Hunt, Screams of a Forgotten Sky
-                ["C"] = { 219314, 219317 },                     -- Ara-Kara Sacbrood, Harvester's Edict
+                ["S"] = { 193701, 252420 },                       -- Algeth'ar Puzzle Box, Solarflare Prism
+                ["A"] = { 264507, 260235, 249343 },               -- Crucible of Erratic Energies, Umbral Plume, Gaze of the Alnseer
+                ["B"] = { 250144, 249806, 250256, 249345, 250258 }, -- Emberwing Feather, Radiant Plume, Heart of Wind, Ranger-Captain's Iridescent Insignia, Vessel of Tortured Souls
+                ["C"] = {},
                 ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 242395, 242396 },                    -- Astral Antenna, Unyielding Netherprism
-                ["A"] = { 242402, 242397, 242399, 219308 },    -- Araz's Ritual Forge, Sigil of the Cosmic Hunt, Screams of a Forgotten Sky, Signet of the Priory
-                ["B"] = { 242494, 219312, 232541 },             -- Lily of the Eternal Weave, Empowering Crystal of Anub'ikkaj, Improvised Seaforium Pacemaker
-                ["C"] = { 219314, 219317 },                     -- Ara-Kara Sacbrood, Harvester's Edict
+                ["S"] = { 193701, 252420 },                       -- Algeth'ar Puzzle Box, Solarflare Prism
+                ["A"] = { 260235, 249343, 264507 },               -- Umbral Plume, Gaze of the Alnseer, Crucible of Erratic Energies
+                ["B"] = { 249806, 250144, 249345 },               -- Radiant Plume, Emberwing Feather, Ranger-Captain's Iridescent Insignia
+                ["C"] = { 250256, 249805, 251792, 249344 },       -- Heart of Wind, Undreamt God's Oozing Vestige, Glorious Crusader's Keepsake, Light Company Guidon
                 ["D"] = {},
             },
         }
@@ -166,18 +166,18 @@ Addon.ClassData["HUNTER"] = {
                 ["D"] = {},
             },
             ["Mythic+"] = {
-                ["S"] = { 246344, 232541, 242395, 242402 },    -- Cursed Stone Idol, Improvised Seaforium Pacemaker, Astral Antenna, Araz's Ritual Forge
-                ["A"] = { 242494, 219308, 242396 },             -- Lily of the Eternal Weave, Signet of the Priory, Unyielding Netherprism
-                ["B"] = { 219312, 219314 },                     -- Empowering Crystal of Anub'ikkaj, Ara-Kara Sacbrood
-                ["C"] = { 219317 },                             -- Harvester's Edict
+                ["S"] = { 193701, 249343 },                       -- Algeth'ar Puzzle Box, Gaze of the Alnseer
+                ["A"] = { 252420, 249806 },                       -- Solarflare Prism, Radiant Plume
+                ["B"] = { 250256, 264507, 250144, 251792, 251782 }, -- Heart of Wind, Crucible of Erratic Energies, Emberwing Feather, Glorious Crusader's Keepsake, Withered Saptor's Paw
+                ["C"] = { 250258 },                               -- Vessel of Tortured Souls
                 ["D"] = {},
             },
             ["Raid"] = {
-                ["S"] = { 232541, 242395, 242402, 246344 },    -- Improvised Seaforium Pacemaker, Astral Antenna, Araz's Ritual Forge, Cursed Stone Idol
-                ["A"] = { 242494, 219308, 242396 },             -- Lily of the Eternal Weave, Signet of the Priory, Unyielding Netherprism
-                ["B"] = { 219312, 219314 },                     -- Empowering Crystal of Anub'ikkaj, Ara-Kara Sacbrood
-                ["C"] = { 219317 },                             -- Harvester's Edict
-                ["D"] = {},
+                ["S"] = { 193701, 249343 },                       -- Algeth'ar Puzzle Box, Gaze of the Alnseer
+                ["A"] = { 249806, 252420 },                       -- Radiant Plume, Solarflare Prism
+                ["B"] = { 250256, 264507, 251792, 250144 },       -- Heart of Wind, Crucible of Erratic Energies, Glorious Crusader's Keepsake, Emberwing Feather
+                ["C"] = { 248583, 251782, 171646 },               -- Drum of Renewed Bonds, Withered Saptor's Paw, Matrix Restabilizer
+                ["D"] = { 249345 },                               -- Ranger-Captain's Iridescent Insignia
             },
         }
     },
