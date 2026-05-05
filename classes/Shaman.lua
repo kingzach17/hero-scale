@@ -28,7 +28,7 @@ Addon.ClassData["SHAMAN"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 5.00, MASTERY = 1.05, HASTE = 0.93, CRIT = 0.56, VERS = 0.30, STAMINA = 2.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 1.50, HASTE = 1.05, MASTERY = 1.03, CRIT = 0.63, VERS = 0.38, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 1.50, MASTERY = 1.05, HASTE = 0.85, CRIT = 0.91, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 1.50, MASTERY = 1.05, HASTE = 0.84, CRIT = 0.90, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
             ["Raid"]         = { PRIMARY = 1.50, MASTERY = 1.05, HASTE = 0.83, CRIT = 0.90, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
         },
         trinkets = {
@@ -143,7 +143,7 @@ Addon.ClassData["SHAMAN"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 4.00, HASTE = 1.05, CRIT = 0.81, MASTERY = 0.52, VERS = 0.51, STAMINA = 2.00, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 1.60, HASTE = 1.05, CRIT = 0.99, VERS = 0.50, MASTERY = 0.46, STAMINA = 0.40, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 1.60, HASTE = 0.76, CRIT = 1.05, MASTERY = 0.66, VERS = 0.65, STAMINA = 0.40, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 1.60, HASTE = 0.76, CRIT = 1.05, MASTERY = 0.65, VERS = 0.67, STAMINA = 0.40, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
             ["Raid"]         = { PRIMARY = 1.60, HASTE = 0.72, CRIT = 1.05, VERS = 0.65, MASTERY = 0.66, STAMINA = 0.40, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
         },
         trinkets = {
