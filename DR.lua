@@ -3,10 +3,12 @@ local API = Addon.API
 Addon.DR = {}
 
 local ipairs = ipairs
+local pcall = pcall
 local wipe = wipe
 local math_max = math.max
 local math_min = math.min
 local string_format = string.format
+local UnitLevel = UnitLevel
 
 -- Diminishing return brackets: {percentThreshold, multiplier}
 -- Each penalty applies only to the portion of rating within that bracket
@@ -41,6 +43,45 @@ local RatingIndex = {
 -- Secondary stat keys eligible for DR bracket selection
 local SECONDARY_STATS = { "CRIT", "HASTE", "MASTERY", "VERS" }
 
+-- Approximate rating-per-1%-bonus by player level. Used by the proxy fallback
+-- when GetCombatRating returns a Secret Value (12.0+) and we cannot read the
+-- player's live rating directly. Numbers are approximate and only need to be
+-- close enough to place the player in the correct DR bracket; relative
+-- ranking of items is preserved even if absolute conversion is off.
+local RPP_BY_LEVEL = {
+    [80] = { CRIT = 180, HASTE = 170, MASTERY = 180, VERS = 205 },
+    [70] = { CRIT = 35,  HASTE = 33,  MASTERY = 35,  VERS = 40  },
+}
+
+local function GetRPP(statKey, playerLevel)
+    local lvl = playerLevel or UnitLevel("player") or 80
+    local row = RPP_BY_LEVEL[lvl] or RPP_BY_LEVEL[80]
+    return row[statKey]
+end
+
+-- Memoized within a single DR evaluation pass; wiped by InvalidateCache when
+-- equipment, spec, or active snapshot changes.
+local activeProxyCache
+
+local function GetActiveSnapshotTotalStats()
+    if activeProxyCache ~= nil then
+        if activeProxyCache == false then return nil end
+        return activeProxyCache.totalStats, activeProxyCache.playerLevel
+    end
+    local specIndex = API:GetSpecialization()
+    local specID = specIndex and API:GetSpecializationInfo(specIndex)
+    local snap = specID and Addon.SpecSnapshots and Addon.SpecSnapshots[specID]
+    if not snap then
+        activeProxyCache = false
+        return nil
+    end
+    activeProxyCache = {
+        totalStats = snap.totalStats,
+        playerLevel = snap.combatRatings and snap.combatRatings.playerLevel,
+    }
+    return activeProxyCache.totalStats, activeProxyCache.playerLevel
+end
+
 -- Returns true if statKey is one of the two highest-weighted secondary stats
 function Addon.DR:IsTopTwoStat(statKey, weights)
     if not weights then return false end
@@ -57,9 +98,22 @@ end
 
 -- Returns a multiplier (0.0-1.0) representing how much of deltaRating's
 -- value survives diminishing returns at the player's current rating level.
--- Uses GetCombatRatingBonus() to derive accurate rating-to-percent conversion
--- at any level, rather than hardcoded constants.
+--
+-- Tries (in order):
+--   1. Snapshot rating + bonus passed in via combatRatings (may be Secret in 12.0+).
+--   2. Live API:GetCombatRating / GetCombatRatingBonus (also may be Secret).
+--   3. Proxy: gear-only rating from snapshot.totalStats + hardcoded
+--      rating-per-percent constants. This path is non-secret-safe.
+--
+-- Wrapped in pcall so any future Secret Value surfacing through a path we
+-- missed degrades to 1.0 (no DR scaling) instead of throwing a Lua error.
 function Addon.DR:GetDRMultiplier(statKey, deltaRating, weights, combatRatings)
+    local ok, result = pcall(self._ComputeDRMultiplier, self, statKey, deltaRating, weights, combatRatings)
+    if not ok then return 1.0 end
+    return result
+end
+
+function Addon.DR:_ComputeDRMultiplier(statKey, deltaRating, weights, combatRatings)
     if not deltaRating or deltaRating == 0 then return 1.0 end
 
     local ratingIdx = RatingIndex[statKey]
@@ -71,21 +125,33 @@ function Addon.DR:GetDRMultiplier(statKey, deltaRating, weights, combatRatings)
         currentPct = combatRatings[statKey].bonus
     else
         currentRating = API:GetCombatRating(ratingIdx)
+        currentPct = API:GetCombatRatingBonus(ratingIdx)
     end
-    if not currentRating or currentRating <= 0 then return 1.0 end
 
-    -- Cache lookup: same stat + current rating + delta + bracket type + source = same result
+    -- Proxy fallback when the API returned nil (Secret Value detected at the
+    -- API boundary, see API.lua). Use gear-only rating + hardcoded RPP.
+    if not currentRating or not currentPct then
+        local totalStats = combatRatings and combatRatings.totalStats
+        local playerLevel = combatRatings and combatRatings.playerLevel
+        if not totalStats then
+            totalStats, playerLevel = GetActiveSnapshotTotalStats()
+        end
+        local gearRating = totalStats and totalStats[statKey]
+        local rpp = GetRPP(statKey, playerLevel)
+        if gearRating and gearRating > 0 and rpp then
+            currentRating = gearRating
+            currentPct = gearRating / rpp
+        end
+    end
+
+    if not currentRating or not currentPct then return 1.0 end
+    if currentRating <= 0 or currentPct <= 0 then return 1.0 end
+
     local isTop = self:IsTopTwoStat(statKey, weights)
-    local cacheKey = string_format("%s:%d:%d:%s:%s", statKey, currentRating, deltaRating, isTop and "R" or "S", combatRatings and "snap" or "live")
+    local cacheKey = string_format("%s:%d:%d:%s", statKey, currentRating, deltaRating, isTop and "R" or "S")
     local cached = Addon.DRCache[cacheKey]
     if cached then return cached end
 
-    if not currentPct then
-        currentPct = API:GetCombatRatingBonus(ratingIdx)
-    end
-    if not currentPct or currentPct <= 0 then return 1.0 end
-
-    -- Derive rating-per-percent dynamically from the player's actual stats
     local rpp = currentRating / currentPct
     local newPct = (currentRating + deltaRating) / rpp
     local rawGain = newPct - currentPct
@@ -114,6 +180,7 @@ end
 -- Clears the DR cache (called on equipment change)
 function Addon.DR:InvalidateCache()
     wipe(Addon.DRCache)
+    activeProxyCache = nil
 end
 
 -- Returns the rating index for a stat key (for external use if needed)

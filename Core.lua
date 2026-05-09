@@ -120,6 +120,10 @@ function Addon:CaptureSpecSnapshot()
             }
         end
     end
+    -- Expose gear-derived stat totals via combatRatings so DR's proxy path
+    -- can reach them when GetCombatRating returns a Secret Value (12.0+).
+    snapshot.combatRatings.totalStats = snapshot.totalStats
+    snapshot.combatRatings.playerLevel = UnitLevel("player")
 
     Addon.SpecSnapshots[specID] = snapshot
 end

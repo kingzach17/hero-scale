@@ -49,12 +49,21 @@ end
 -- Combat Rating Functions
 -- ============================================================
 
+-- 12.0+ wraps stat-API returns as Secret Values; tainted addon code cannot
+-- compare or do arithmetic on them. Returning nil here lets callers' existing
+-- nil-guards short-circuit to a safe default.
+local issecretvalue = issecretvalue
+local function unsecret(v)
+    if issecretvalue and issecretvalue(v) then return nil end
+    return v
+end
+
 function Addon.API:GetCombatRating(ratingIndex)
-    return GetCombatRating(ratingIndex)
+    return unsecret(GetCombatRating(ratingIndex))
 end
 
 function Addon.API:GetCombatRatingBonus(ratingIndex)
-    return GetCombatRatingBonus(ratingIndex)
+    return unsecret(GetCombatRatingBonus(ratingIndex))
 end
 
 -- ============================================================
