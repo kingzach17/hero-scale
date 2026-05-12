@@ -25,8 +25,8 @@ Addon.ClassData["WARLOCK"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 5.00, HASTE = 1.05, MASTERY = 0.67, CRIT = 0.52, VERS = 0.25, STAMINA = 2.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 1.50, HASTE = 1.05, CRIT = 0.84, MASTERY = 0.80, VERS = 0.26, STAMINA = 0.00, LEECH = 0.10, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 1.50, HASTE = 1.05, MASTERY = 0.83, CRIT = 1.04, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
-            ["Raid"]         = { PRIMARY = 1.50, HASTE = 1.05, CRIT = 1.04, MASTERY = 0.83, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 1.50, HASTE = 1.03, MASTERY = 0.82, CRIT = 1.05, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
+            ["Raid"]         = { PRIMARY = 1.50, HASTE = 1.04, CRIT = 1.05, MASTERY = 0.83, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
         },
         trinkets = {
             ["Leveling"] = {
@@ -80,8 +80,8 @@ Addon.ClassData["WARLOCK"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 5.00, HASTE = 1.05, CRIT = 0.66, MASTERY = 0.63, VERS = 0.22, STAMINA = 2.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 1.50, HASTE = 1.05, CRIT = 0.83, MASTERY = 0.67, VERS = 0.30, STAMINA = 0.00, LEECH = 0.10, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 1.50, HASTE = 0.95, CRIT = 1.05, MASTERY = 0.77, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
-            ["Raid"]         = { PRIMARY = 1.50, CRIT = 1.05, HASTE = 0.96, MASTERY = 0.78, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 1.50, HASTE = 0.94, CRIT = 1.05, MASTERY = 0.77, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
+            ["Raid"]         = { PRIMARY = 1.50, CRIT = 1.05, HASTE = 0.95, MASTERY = 0.79, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
         },
         trinkets = {
             ["Leveling"] = {
