@@ -25,7 +25,7 @@ Addon.ClassData["DEMONHUNTER"] = {
             ["Leveling"]     = { PRIMARY = 5.00, CRIT = 1.05, MASTERY = 0.88, HASTE = 0.47, VERS = 0.05, STAMINA = 2.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 6.0, SOCKET_VALUE = 0.00 },
             ["Solo/Delves"]  = { PRIMARY = 2.00, CRIT = 1.05, MASTERY = 0.81, HASTE = 0.47, VERS = 0.22, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 6.0, SOCKET_VALUE = 65 },
             ["Mythic+"]      = { PRIMARY = 2.00, CRIT = 1.05, MASTERY = 0.94, HASTE = 0.77, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 6.0, SOCKET_VALUE = 65 },
-            ["Raid"]         = { PRIMARY = 2.00, CRIT = 1.05, MASTERY = 0.94, HASTE = 0.76, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 6.0, SOCKET_VALUE = 65 },
+            ["Raid"]         = { PRIMARY = 2.00, CRIT = 1.05, MASTERY = 0.95, HASTE = 0.76, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 6.0, SOCKET_VALUE = 65 },
         },
         trinkets = {
             ["Leveling"] = {
@@ -78,8 +78,8 @@ Addon.ClassData["DEMONHUNTER"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 3.00, HASTE = 1.05, VERS = 0.52, MASTERY = 0.42, CRIT = 0.38, STAMINA = 2.50, LEECH = 0.15, SPEED = 0.06, AVOIDANCE = 0.12, WEAPON_DPS = 3.5, SOCKET_VALUE = 70 },
             ["Solo/Delves"]  = { PRIMARY = 3.00, HASTE = 1.05, CRIT = 1.01, MASTERY = 0.54, VERS = 0.40, STAMINA = 2.50, LEECH = 0.15, SPEED = 0.06, AVOIDANCE = 0.12, WEAPON_DPS = 3.5, SOCKET_VALUE = 70 },
-            ["Mythic+"]      = { PRIMARY = 3.00, HASTE = 1.05, VERS = 0.65, MASTERY = 0.71, CRIT = 0.83, STAMINA = 2.50, LEECH = 0.15, SPEED = 0.06, AVOIDANCE = 0.12, WEAPON_DPS = 3.5, SOCKET_VALUE = 70 },
-            ["Raid"]         = { PRIMARY = 3.00, CRIT = 0.85, HASTE = 1.05, MASTERY = 0.73, VERS = 0.65, STAMINA = 2.50, LEECH = 0.15, SPEED = 0.06, AVOIDANCE = 0.12, WEAPON_DPS = 3.5, SOCKET_VALUE = 70 },
+            ["Mythic+"]      = { PRIMARY = 3.00, HASTE = 1.05, VERS = 0.65, MASTERY = 0.71, CRIT = 0.84, STAMINA = 2.50, LEECH = 0.15, SPEED = 0.06, AVOIDANCE = 0.12, WEAPON_DPS = 3.5, SOCKET_VALUE = 70 },
+            ["Raid"]         = { PRIMARY = 3.00, CRIT = 0.86, HASTE = 1.05, MASTERY = 0.74, VERS = 0.65, STAMINA = 2.50, LEECH = 0.15, SPEED = 0.06, AVOIDANCE = 0.12, WEAPON_DPS = 3.5, SOCKET_VALUE = 70 },
         },
         trinkets = {
             ["Leveling"] = {
@@ -132,8 +132,8 @@ Addon.ClassData["DEMONHUNTER"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 5.00, HASTE = 1.05, MASTERY = 1.01, CRIT = 0.34, VERS = 0.18, STAMINA = 2.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 2.00, MASTERY = 1.05, HASTE = 0.92, CRIT = 0.60, VERS = 0.20, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 2.00, HASTE = 0.97, MASTERY = 1.05, CRIT = 0.73, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
-            ["Raid"]         = { PRIMARY = 2.00, MASTERY = 1.05, HASTE = 0.97, CRIT = 0.73, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 2.00, HASTE = 0.98, MASTERY = 1.05, CRIT = 0.73, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
+            ["Raid"]         = { PRIMARY = 2.00, MASTERY = 1.05, HASTE = 0.98, CRIT = 0.73, VERS = 0.65, STAMINA = 0.00, LEECH = 0.08, SPEED = 0.04, AVOIDANCE = 0.10, WEAPON_DPS = 5.0, SOCKET_VALUE = 65 },
         },
         trinkets = {
             ["Leveling"] = {
