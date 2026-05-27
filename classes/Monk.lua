@@ -139,7 +139,7 @@ Addon.ClassData["MONK"] = {
         weights = {
             ["Leveling"]     = { PRIMARY = 4.00, HASTE = 1.05, CRIT = 0.53, VERS = 0.40, MASTERY = 0.26, STAMINA = 2.00, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
             ["Solo/Delves"]  = { PRIMARY = 1.60, HASTE = 1.05, CRIT = 0.66, VERS = 0.49, MASTERY = 0.41, STAMINA = 0.40, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
-            ["Mythic+"]      = { PRIMARY = 1.60, HASTE = 1.05, CRIT = 0.92, VERS = 0.67, MASTERY = 0.65, STAMINA = 0.40, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
+            ["Mythic+"]      = { PRIMARY = 1.60, HASTE = 1.05, CRIT = 0.92, VERS = 0.68, MASTERY = 0.65, STAMINA = 0.40, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
             ["Raid"]         = { PRIMARY = 1.60, HASTE = 1.05, CRIT = 0.93, VERS = 0.65, MASTERY = 0.65, STAMINA = 0.40, LEECH = 0.12, SPEED = 0.05, AVOIDANCE = 0.10, WEAPON_DPS = 1.5, SOCKET_VALUE = 65 },
         },
         trinkets = {
